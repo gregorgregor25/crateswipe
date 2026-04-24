@@ -1,0 +1,27 @@
+{
+  "name": "crateswipe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tinder-style DJ music discovery app — personal tool for Gregor + friends over Tailscale",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "dev:api": "npm run dev --workspace=@crateswipe/api",
+    "start:api": "npm run start --workspace=@crateswipe/api",
+    "migrate:up": "npm run migrate:up --workspace=@crateswipe/api",
+    "mint-token": "npm run mint-token --workspace=@crateswipe/api"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
