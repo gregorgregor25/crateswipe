@@ -3,6 +3,7 @@ import { registerAuth } from './middleware/auth.js';
 import { registerDeckRoute } from './routes/deck.js';
 import { registerHealthRoute } from './routes/health.js';
 import { registerWhoamiRoute } from './routes/whoami.js';
+import { registerSwipeRoute } from './routes/swipe.js';
 
 export const buildServer = (): FastifyInstance => {
   const app = Fastify({
@@ -15,6 +16,7 @@ export const buildServer = (): FastifyInstance => {
   registerHealthRoute(app);
   registerWhoamiRoute(app);
   registerDeckRoute(app);
+  registerSwipeRoute(app);
 
   return app;
 };
