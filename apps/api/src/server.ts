@@ -5,6 +5,7 @@ import { registerHealthRoute } from './routes/health.js';
 import { registerWhoamiRoute } from './routes/whoami.js';
 import { registerSwipeRoute } from './routes/swipe.js';
 import { registerCrateRoute } from './routes/crate.js';
+import { registerLinksRoute } from './routes/links.js';
 
 export const buildServer = (): FastifyInstance => {
   const app = Fastify({
@@ -19,6 +20,7 @@ export const buildServer = (): FastifyInstance => {
   registerDeckRoute(app);
   registerSwipeRoute(app);
   registerCrateRoute(app);
+  void registerLinksRoute(app);
 
   return app;
 };
