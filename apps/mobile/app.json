@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "CrateSwipe",
+    "slug": "crateswipe",
+    "version": "1.0.0",
+    "scheme": "crateswipe",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0a"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.gregor.crateswipe"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0a0a0a"
+      },
+      "package": "com.gregor.crateswipe"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-av",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow CrateSwipe to access your media library.",
+          "savePhotosPermission": "Allow CrateSwipe to save files to your media library.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
