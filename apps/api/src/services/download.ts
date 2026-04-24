@@ -3,6 +3,7 @@ import { existsSync } from 'node:fs';
 import NodeID3 from 'node-id3';
 import type { Database as DB } from 'better-sqlite3';
 import { config } from '../config.js';
+import { downloadEvents } from '../events.js';
 
 export type TrackMeta = {
   id: number;
@@ -109,6 +110,8 @@ export class DownloadService {
           `UPDATE downloads SET status = 'ready', file_path = ?, finished_at = ? WHERE track_id = ?`,
         )
         .run(filePath, Date.now(), meta.id);
+
+      downloadEvents.emit('download_ready', { trackId: meta.id });
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       this.db
@@ -116,6 +119,8 @@ export class DownloadService {
           `UPDATE downloads SET status = 'failed', error = ?, finished_at = ? WHERE track_id = ?`,
         )
         .run(message, Date.now(), meta.id);
+
+      downloadEvents.emit('download_failed', { trackId: meta.id, error: message });
     }
   }
 }
