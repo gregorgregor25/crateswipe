@@ -21,7 +21,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0a0a0a"
       },
-      "package": "com.gregor.crateswipe"
+      "package": "com.gregor.crateswipe",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,10 +45,17 @@
         }
       ]
     ],
+    "updates": {
+      "url": "https://u.expo.dev/5779c147-342b-4243-8c70-05f226c5deec"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
     "extra": {
       "eas": {
-        "projectId": ""
+        "projectId": "5779c147-342b-4243-8c70-05f226c5deec"
       }
-    }
+    },
+    "owner": "gregorgregor25"
   }
 }
